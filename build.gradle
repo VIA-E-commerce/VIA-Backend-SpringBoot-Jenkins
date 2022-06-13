@@ -4,6 +4,10 @@ plugins {
 	id 'java'
 }
 
+ext {
+	lombok = "org.projectlombok:lombok"
+}
+
 group = 'com.mdzn'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
@@ -14,6 +18,11 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
+
+	// Lombok
+	compileOnly lombok
+	annotationProcessor lombok
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
