@@ -6,6 +6,7 @@ plugins {
 
 ext {
 	lombok = "org.projectlombok:lombok"
+	jwtVersion = '0.11.5'
 }
 
 group = 'com.mdzn'
@@ -29,6 +30,12 @@ dependencies {
 	// Lombok
 	compileOnly lombok
 	annotationProcessor lombok
+
+	// Security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation "io.jsonwebtoken:jjwt-api:${jwtVersion}"
+	runtimeOnly "io.jsonwebtoken:jjwt-impl:${jwtVersion}"
+	runtimeOnly "io.jsonwebtoken:jjwt-jackson:${jwtVersion}"
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
